@@ -12,14 +12,20 @@ var longestCommonPrefix = function(strs) {
   //     }
   //     console.log(strs[i]);
   //   }
-  //what is the length of the longest string? not sure this is necessary but i want to know
+  //actually i just want to know which one is the shortest
   let arrLengths = [];
   for (let i = 0; i < strs.length; i++) {
     arrLengths.push(strs[i].length);
   }
 
-  arrLengths.sort((a, b) => b - a);
-  console.log(arrLengths);
+  arrLengths.sort((a, b) => a - b);
+  console.log(arrLengths[0]);
+  //arrLengths[0] is the shortest length
+  let test = strs.every(x => x.includes(x.substring(0, arrLengths)));
+  console.log(test);
+  //   for(let i=arrLengths; i>=0; i--){
+
+  //   }
   //this doesn't work the way i wanted it to
   //   return strs.every(x => x.substring(0, 3));
 };
