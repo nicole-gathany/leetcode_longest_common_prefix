@@ -10,7 +10,7 @@ var longestCommonPrefix = function(strs) {
 
   arrLengths.sort((a, b) => a - b);
   //arrLengths[0] is the shortest length
-  console.log(arrLengths[0]);
+  // console.log(arrLengths[0]);
 
   //maybe we can make an array with all the substrings
   let substringArr = [];
@@ -21,8 +21,12 @@ var longestCommonPrefix = function(strs) {
   for (let j = arrLengths[0]; j >= 0; j--) {
     substringArr.push(strs[0].substr(0, j));
   }
-
-  console.log(substringArr);
+  // console.log(substringArr);
+  for (let i = 0; i < substringArr.length; i++) {
+    if (strs.every(x => x.includes(substringArr[i])) === true) {
+      return substringArr[i];
+    }
+  }
 };
 
 console.log(longestCommonPrefix(["flower", "flow", "flight"]));
