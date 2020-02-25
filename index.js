@@ -3,15 +3,23 @@
  * @return {string}
  */
 var longestCommonPrefix = function(strs) {
+  //   for (let i = 0; i < strs.length; i++) {
+  //     //syntax for substring string.substr(start, length)
+  //     for (let j = strs[i].length; j >= 0; j--) {
+  //       // when i tested this i wasn't sure
+  //       //i don't know how eny of this works!!
+  //       console.log(strs[i].substr(0, j));
+  //     }
+  //     console.log(strs[i]);
+  //   }
+  //what is the length of the longest string? not sure this is necessary but i want to know
+  let arrLengths = [];
   for (let i = 0; i < strs.length; i++) {
-    //syntax for substring string.substr(start, length)
-    //for (let j = strs[i].length; j >= 0; j--) {
-    // when i tested this i wasn't sure
-    console.log(strs[i].includes(x => x.substring(0, 2)));
-    //}
+    arrLengths.push(strs[i].length);
   }
-  //which string is the longest
-  for (let i = 0; i < strs.length; i++) {}
+
+  arrLengths.sort((a, b) => b - a);
+  console.log(arrLengths);
   //this doesn't work the way i wanted it to
   //   return strs.every(x => x.substring(0, 3));
 };
