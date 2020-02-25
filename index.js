@@ -22,6 +22,7 @@ var longestCommonPrefix = function(strs) {
   console.log(arrLengths[0]);
   //arrLengths[0] is the shortest length
   let test = strs.every(x => x.includes(x.substring(0, arrLengths)));
+  //test is true for all the strings and that should not be the case
   console.log(test);
   //   for(let i=arrLengths; i>=0; i--){
 
