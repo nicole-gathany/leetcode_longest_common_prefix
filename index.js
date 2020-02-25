@@ -26,7 +26,7 @@ var longestCommonPrefix = function(strs) {
   console.log(substringArr);
   let result = "";
   for (let i = substringArr.length; i >= 0; i--) {
-    if (strs.every(x => x.includes(substringArr[i])) === true) {
+    if (strs.every(x => x.startsWith(substringArr[i])) === true) {
       result = substringArr[i];
     }
   }
