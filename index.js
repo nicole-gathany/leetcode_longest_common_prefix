@@ -21,14 +21,17 @@ var longestCommonPrefix = function(strs) {
   for (let j = arrLengths[0]; j >= 0; j--) {
     substringArr.push(strs[0].substr(0, j));
   }
-
+  //i want to take out ""
+  substringArr.pop();
   console.log(substringArr);
   let result = "";
-  for (let i = 0; i < substringArr.length; i++) {
+  for (let i = substringArr.length; i > 0; i--) {
     if (strs.every(x => x.includes(substringArr[i])) === true) {
-      return substringArr[i];
+      result = substringArr[i];
     }
   }
+
+  return result;
 };
 
 console.log(longestCommonPrefix(["flower", "flow", "flight"]));
