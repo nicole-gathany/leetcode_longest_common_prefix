@@ -25,14 +25,22 @@ var longestCommonPrefix = function(strs) {
   substringArr.pop();
   console.log(substringArr);
   let result = "";
-  for (let i = substringArr.length; i > 0; i--) {
+  for (let i = substringArr.length; i >= 0; i--) {
     if (strs.every(x => x.includes(substringArr[i])) === true) {
       result = substringArr[i];
     }
   }
 
+  if (result === undefined) {
+    result = "";
+  }
   return result;
 };
 
 console.log(longestCommonPrefix(["flower", "flow", "flight"]));
 console.log(longestCommonPrefix(["dog", "racecar", "car"]));
+console.log(longestCommonPrefix(["a"]));
+console.log(longestCommonPrefix([]));
+// ["c","acc","ccc"] didn't work because the we don't care if the string includes it, only it begins that way
+// prefix is the beginning
+console.log(longestCommonPrefix(["c", "acc", "ccc"]));
